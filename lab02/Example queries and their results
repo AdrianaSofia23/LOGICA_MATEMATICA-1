@@ -1,1 +1,241 @@
+# Career Guidance Expert System
+
+Expert system in Prolog for vocational guidance and university career recommendations.
+
+
+## System features
+- 12 university majors defined
+- Classification system in Basic Sciences, Applied Sciences, and Technology
+- Two consultation modes: simple (yes/no) and advanced (selection of interests)
+- Matching algorithm that ranks majors by relevance
+
+
+## Examples of queries and results
+
+
+    Example 1: Simple Questionnaire
+    
+        Query: ?- start_questionnaire.
+        
+            Example Interaction 1:
+            
+                === UNIVERSITY CAREER ADVISOR ===
+                Answer yes or no to the following questions:
+                
+                Do you enjoy basic sciences (nature, chemistry, physics, geology, mathematics)? (yes/no): yes.
+                
+                Are you interested in applied sciences (health, food, materials, nanotechnology)? (yes/no): no.
+                
+                Do you like technology and computing? (yes/no): no.
+                
+                === RECOMMENDED CAREERS ===
+                ✓ biology
+                ✓ chemistry
+                ✓ mathematics
+                ✓ physics
+                ✓ geology
+        
+            Example Interaction 2:
+            
+                === UNIVERSITY CAREER ADVISOR ===
+                Answer yes or no to the following questions:
+                
+                Do you enjoy basic sciences (nature, chemistry, physics, geology, mathematics)? (yes/no): no.
+                
+                Are you interested in applied sciences (health, food, materials, nanotechnology)? (yes/no): yes.
+                
+                Do you like technology and computing? (yes/no): yes.
+                
+                === RECOMMENDED CAREERS ===
+                ✓ agroindustry
+                ✓ biomedicine
+                ✓ biochemistry_and_Pharmacy
+                ✓ materials_Science
+                ✓ nanotechnology
+                ✓ computer_Science
+                ✓ data_Science
+    
+    
+    Example 2: Advanced Questionnaire
+    
+        Query: ?- advanced_questionnaire.
+    
+            Example Interaction 1 (Basic Sciences):
+            
+                === ADVANCED CAREER ADVISOR ===
+                Select your main interest area:
+                1. Basic Sciences
+                2. Applied Sciences
+                3. Technology
+                Your choice (1/2/3): 1.
+                
+                === BASIC SCIENCES ===
+                Available careers: [biology,chemistry,geology,mathematics,physics]
+                
+                Select your interests from the list below:
+                1. earth
+                2. evolution
+                3. field_work
+                4. laws_nature
+                5. living_organisms
+                6. logic
+                7. mathematics
+                8. matter
+                9. nature
+                10. problem_solving
+                11. reactions
+                12. resources
+                13. theory
+                14. universe
+                
+                Enter the numbers of your three interests as a list (e.g., [1,3,5]): [1,5,14].
+                
+                Your selected interests: [earth,living_organisms,universe]
+                
+                === RECOMMENDED CAREERS ===
+                 --> biology
+                   Interests: [living_organisms,nature,evolution]
+                
+                 --> geology
+                   Interests: [earth,field_work,environment,resources]
+                
+                 --> physics
+                   Interests: [universe,laws_nature,mathematics]
+            
+            Example Interaction 2 (Technology):
+    
+    
+                === ADVANCED CAREER ADVISOR ===
+                Select your main interest area:
+                1. Basic Sciences
+                2. Applied Sciences
+                3. Technology
+                Your choice (1/2/3): 3.
+                
+                === TECHNOLOGY/COMPUTING ===
+                Available careers: [computer_Science,data_Science]
+                
+                Select your interests from the list below:
+                1. algorithms
+                2. data_analysis
+                3. mathematics
+                4. problem_solving
+                5. programming
+                6. statistics
+                
+                Enter the numbers of your three interests as a list (e.g., [1,3,5]): [2,5,6].
+                
+                Your selected interests: [data_analysis,programming,statistics]
+                
+                === RECOMMENDED CAREERS ===
+                 --> data_Science
+                   Interests: [data_analysis,statistics,programming]
+                
+                 --> computer_Science
+                   Interests: [programming,algorithms,problem_solving,mathematics]
+            
+            Example Interaction 3 (Applied Sciences):
+            
+            
+                === ADVANCED CAREER ADVISOR ===
+                Select your main interest area:
+                1. Basic Sciences
+                2. Applied Sciences
+                3. Technology
+                Your choice (1/2/3): 2.
+                
+                === APPLIED SCIENCES ===
+                Available careers: [agroindustry,biochemistry_and_Pharmacy,biomedicine,materials_Science,nanotechnology]
+                
+                Select your interests from the list below:
+                1. agribusiness
+                2. biochemistry
+                3. health
+                4. industrial_processes
+                5. innovation
+                6. materials
+                7. medicine
+                8. nanoscale
+                9. physics_chemistry
+                10. properties
+                11. technology_food
+                
+                Enter the numbers of your three interests as a list (e.g., [1,3,5]): [3,7,8].
+                
+                Your selected interests: [health,medicine,nanoscale]
+                
+                === RECOMMENDED CAREERS ===
+                 --> biomedicine
+                   Interests: [human_health,medicine,biology]
+                
+                 --> nanotechnology
+                   Interests: [nanoscale,innovation,materials,physics]
+                
+                 --> biochemistry_and_Pharmacy
+                   Interests: [medicines,biochemistry,health]
+    
+    
+    Exmple 3: Direct consults
+    
+        Query: ?- basic_sciences(Career).
+        
+            Result:
+            
+              Career = biology ;
+              Career = chemistry ;
+              Career = geology ;
+              Career = mathematics ;
+              Career = physics
+        
+        
+        % Get interest in a specific career
+        
+        Query: ?- related_areas(computer_Science, Interests).
+        
+            Result:
+        
+              Interests = [programming,algorithms,problem_solving,mathematics]
+    
+    
+        # List all available careers
+      
+        
+        Query: ?- career(Career).
+        
+            Result:
+            
+              Career = agroindustry ;
+              Career = biology ;
+              Career = biomedicine ;
+              Career = computer_Science ;
+              Career = mathematics ;
+              Career = data_Science ;
+              Career = chemistry ;
+              Career = materials_Science ;
+              Career = biochemistry_and_Pharmacy ;
+              Career = nanotechnology ;
+              Career = physics ;
+              Career = geology
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
