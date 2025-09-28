@@ -129,7 +129,7 @@ display_careers_list([Career|Rest]) :-
 
 
 % ---------------------------
-% ADVANCED QUESTIONNAIRE (CORREGIDO)
+% ADVANCED QUESTIONNAIRE 
 % ---------------------------
 
 % main predicate 
@@ -147,7 +147,6 @@ advanced_questionnaire :-
       Choice = 3 -> filter_technology ;
       write('Invalid choice'), nl, fail
     ).
-
 
 
 filter_basic_sciences :-
@@ -305,6 +304,9 @@ display_career_matches(MatchingCareers) :-
     display_careers_with_interests(MatchingCareers).
 
 display_careers_with_interests([]).
+
+
+
 display_careers_with_interests([Career|Rest]) :-
     related_areas(Career, Interests),
     write(' --> '), write(Career), nl,
