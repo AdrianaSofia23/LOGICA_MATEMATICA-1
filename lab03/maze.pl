@@ -57,3 +57,12 @@ find_path(From, To, Path) :-
 %Find all possible paths
 all_paths(From, To, Paths) :-
     findall(Path, find_path(From, To, Path), Paths).
+
+
+% QUERIES
+
+?- find_path(entrace, exit, Path).
+
+?- all_paths(c, exit, Paths).
+
+?- find_path(a, d, Path).
