@@ -123,11 +123,11 @@ why(X, Y) :-
 % ==============================================================
 
 
-?- why(a, f).     % Verifica por qué el camino de a → f está bloqueado
-?- why(b, d).     % Verifica el bloqueo de b → d
-?- reason(c, e, Explanation).
-?- reason(a, f, Explanation).
-?- can_move(c, e).
-?- can_move(a, f).
-?- find_path(entrance, exit, Path).
+% ?- why(a, f).     % Verifica por qué el camino de a → f está bloqueado
+% ?- why(b, d).     % Verifica el bloqueo de b → d
+% ?- reason(c, e, Explanation).
+% ?- reason(a, f, Explanation).
+% ?- can_move(c, e).
+% ?- can_move(a, f).
+% ?- find_path(entrance, exit, Path).
 
