@@ -66,7 +66,7 @@ move(X, Y, Visited, Path) :-
     move(Z, Y, [Z|Visited], Path).
 
 % ============================================
-% PART 4: MAIN PATH FINDING
+% PART 4: Putting It All Together
 % ============================================
 
 
@@ -116,3 +116,18 @@ why(X, Y) :-
 % preventing cycles through a list of visited nodes. Finally, 
 % find_path/3 integrates these elements to locate and print a 
 % complete reasoning trace for the route from entrance to exit.
+
+
+% ==============================================================
+%                        QUERIES
+% ==============================================================
+
+
+?- why(a, f).     % Verifica por qué el camino de a → f está bloqueado
+?- why(b, d).     % Verifica el bloqueo de b → d
+?- reason(c, e, Explanation).
+?- reason(a, f, Explanation).
+?- can_move(c, e).
+?- can_move(a, f).
+?- find_path(entrance, exit, Path).
+
