@@ -35,3 +35,14 @@ noun_phrase --> determiner, adjectives, noun.
 verb_phrase --> verb_any, noun_phrase.
 verb_phrase --> adverb, verb_any, noun_phrase.
 verb_phrase --> verb_any, adverb, noun_phrase.
+
+
+% Parsing (recognition) examples:
+% ?- phrase(sentence, [the, big, dog, eats, the, fish]).
+% true.
+%
+% ?- phrase(sentence, [i, will, eat, an, apple]).
+% true.
+%
+% ?- phrase(sentence, [she, quickly, studies, the, computer]).
+% true.
